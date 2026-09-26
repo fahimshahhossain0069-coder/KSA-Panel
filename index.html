@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,14 +15,14 @@
 }
 
 body{
-    background:#f4f6fa;
-    color:#182033;
+    background:#f4f7fb;
+    color:#172033;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
+
 .header{
-    background:#ffffff;
-    border-bottom:1px solid #e5e7eb;
+    background:linear-gradient(90deg,#0757d9,#168cff,#16a34a,#f97316,#e3262e);
     padding:15px 5%;
     display:flex;
     justify-content:space-between;
@@ -30,99 +30,137 @@ body{
     position:sticky;
     top:0;
     z-index:999;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
 }
 
 .logo{
-    font-size:25px;
+    color:white;
+    font-size:26px;
     font-weight:900;
-    color:#0757d9;
 }
 
 .logo span{
-    color:#e3262e;
+    color:#ffe600;
 }
 
-.login-btn{
-    background:#0757d9;
-    color:white;
+.telegram-top{
+    background:white;
+    color:#0757d9;
+    padding:10px 17px;
+    border-radius:8px;
     text-decoration:none;
-    padding:10px 18px;
-    border-radius:7px;
     font-weight:bold;
 }
 
-/* NOTICE */
+/* ================= NOTICE ================= */
+
 .notice{
-    margin:20px auto;
     max-width:1100px;
+    margin:20px auto;
     padding:16px 20px;
-    background:#fff8d8;
-    border-left:5px solid #ffd21f;
+    background:#fff7ed;
+    border-left:5px solid #f97316;
     border-radius:8px;
+    box-shadow:0 3px 12px rgba(0,0,0,.06);
 }
 
 .notice b{
     color:#e3262e;
 }
 
-/* HERO */
+/* ================= HERO ================= */
+
 .hero{
     max-width:1100px;
     margin:20px auto;
-    min-height:230px;
-    border-radius:14px;
-    padding:50px 25px;
+    border-radius:16px;
+    padding:55px 20px;
     text-align:center;
     color:white;
-    background:linear-gradient(135deg,#0757d9,#1565e8,#e3262e);
+
+    background:
+    linear-gradient(
+        135deg,
+        #0757d9 0%,
+        #168cff 28%,
+        #16a34a 52%,
+        #f97316 76%,
+        #e3262e 100%
+    );
+
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
 }
 
 .hero h1{
-    font-size:42px;
+    font-size:43px;
     margin-bottom:12px;
 }
 
 .hero h1 span{
-    color:#ffd21f;
+    color:#ffe600;
 }
 
 .hero p{
     font-size:17px;
 }
 
-/* CATEGORY */
+/* ================= CONTAINER ================= */
+
 .container{
     max-width:1100px;
     margin:auto;
-    padding:0 18px 40px;
+    padding:0 18px 45px;
 }
+
+/* ================= CATEGORY ================= */
 
 .categories{
     display:flex;
     gap:10px;
     overflow-x:auto;
-    padding:5px 0 20px;
+    padding:10px 0 20px;
 }
 
 .categories button{
     border:0;
-    padding:11px 17px;
+    padding:11px 18px;
     border-radius:8px;
     background:white;
     color:#0757d9;
-    border:1px solid #dce2ec;
+    border:1px solid #dbe2ec;
     font-weight:bold;
-    white-space:nowrap;
     cursor:pointer;
+    white-space:nowrap;
+    transition:.2s;
 }
 
-.categories button.active,
-.categories button:hover{
+.categories button:nth-child(2):hover{
+    background:#e3262e;
+    color:white;
+}
+
+.categories button:nth-child(3):hover{
+    background:#f97316;
+    color:white;
+}
+
+.categories button:nth-child(4):hover{
+    background:#16a34a;
+    color:white;
+}
+
+.categories button:nth-child(5):hover{
     background:#0757d9;
     color:white;
 }
 
-/* PRODUCTS */
+.categories .active{
+    background:#0757d9;
+    color:white;
+}
+
+/* ================= PRODUCTS ================= */
+
 .products{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -130,22 +168,41 @@ body{
 }
 
 .product{
-    background:#fff;
-    border:1px solid #e3e7ef;
-    border-radius:13px;
+    background:white;
+    border-radius:14px;
     overflow:hidden;
-    box-shadow:0 5px 18px rgba(0,0,0,.07);
+    border:1px solid #e1e6ef;
+    box-shadow:0 5px 20px rgba(0,0,0,.07);
+    transition:.25s;
+}
+
+.product:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 28px rgba(0,0,0,.13);
+}
+
+/* Different product colors */
+
+.product:nth-child(1) .product-img{
+    background:linear-gradient(135deg,#0757d9,#168cff);
+}
+
+.product:nth-child(2) .product-img{
+    background:linear-gradient(135deg,#16a34a,#22c55e);
+}
+
+.product:nth-child(3) .product-img{
+    background:linear-gradient(135deg,#f97316,#e3262e);
 }
 
 .product-img{
-    height:130px;
+    height:135px;
     display:flex;
     justify-content:center;
     align-items:center;
-    background:linear-gradient(135deg,#0757d9,#e3262e);
-    color:#ffd21f;
-    font-size:42px;
-    font-weight:bold;
+    color:white;
+    font-size:38px;
+    font-weight:900;
 }
 
 .product-body{
@@ -155,90 +212,94 @@ body{
 .product h3{
     color:#0757d9;
     margin-bottom:8px;
+    font-size:20px;
 }
 
 .verified{
     display:inline-block;
-    background:#ffd21f;
-    color:#111;
-    padding:4px 8px;
-    border-radius:15px;
+    background:#16a34a;
+    color:white;
+    padding:5px 9px;
+    border-radius:20px;
     font-size:11px;
     font-weight:bold;
 }
 
 .product p{
-    color:#6b7280;
+    color:#687386;
     font-size:14px;
     margin:10px 0;
-    min-height:35px;
+    min-height:36px;
 }
 
 .price{
-    color:#e3262e;
-    font-size:23px;
+    font-size:24px;
     font-weight:900;
-    margin:12px 0;
+    color:#e3262e;
+    margin:13px 0;
 }
 
 .buy{
     width:100%;
-    border:0;
     padding:12px;
-    border-radius:7px;
+    border:0;
+    border-radius:8px;
     background:#0757d9;
-    color:#fff;
+    color:white;
     font-size:15px;
     font-weight:bold;
     cursor:pointer;
+    transition:.2s;
 }
 
 .buy:hover{
     background:#e3262e;
 }
 
-/* PAYMENT */
+/* ================= PAYMENT ================= */
+
 .payment{
     margin-top:35px;
-    background:#fff;
-    border-radius:13px;
+    background:white;
+    border-radius:14px;
     padding:25px;
-    border-top:5px solid #ffd21f;
-    box-shadow:0 5px 18px rgba(0,0,0,.07);
+    border-top:5px solid #f97316;
+    box-shadow:0 5px 20px rgba(0,0,0,.07);
 }
 
 .payment h2{
     text-align:center;
     color:#0757d9;
-    margin-bottom:18px;
+    margin-bottom:20px;
 }
 
 .bkash{
     text-align:center;
-    background:#fff8d8;
-    border:2px solid #ffd21f;
-    padding:18px;
-    border-radius:9px;
+    background:#eff6ff;
+    border:2px solid #0757d9;
+    padding:20px;
+    border-radius:10px;
 }
 
 .bkash-title{
     color:#e3262e;
+    font-size:18px;
     font-weight:bold;
 }
 
 .bkash-number{
     color:#0757d9;
-    font-size:26px;
+    font-size:27px;
     font-weight:900;
     margin:8px 0;
 }
 
 .payment input{
     width:100%;
+    padding:14px;
     margin-top:15px;
-    padding:13px;
-    border:1px solid #d6dce7;
-    border-radius:7px;
+    border:1px solid #d5dce7;
+    border-radius:8px;
     outline:none;
     font-size:15px;
 }
@@ -249,35 +310,57 @@ body{
 
 .submit{
     width:100%;
+    padding:14px;
     margin-top:10px;
-    padding:13px;
     border:0;
-    border-radius:7px;
+    border-radius:8px;
     background:#e3262e;
     color:white;
     font-weight:bold;
     cursor:pointer;
 }
 
-.telegram{
+.submit:hover{
+    background:#f97316;
+}
+
+.telegram-support{
     display:block;
-    margin-top:10px;
     text-align:center;
-    padding:12px;
-    border-radius:7px;
-    background:#0757d9;
+    margin-top:10px;
+    padding:13px;
+    border-radius:8px;
+    background:#16a34a;
     color:white;
     text-decoration:none;
     font-weight:bold;
 }
 
-/* ORDERS */
+.telegram-support:hover{
+    background:#0757d9;
+}
+
+/* ================= SUCCESS ================= */
+
+.success{
+    display:none;
+    margin-top:12px;
+    padding:12px;
+    background:#ecfdf5;
+    color:#15803d;
+    border:1px solid #22c55e;
+    border-radius:8px;
+    text-align:center;
+}
+
+/* ================= ORDERS ================= */
+
 .orders{
     margin-top:35px;
-    background:#fff;
-    border-radius:13px;
+    background:white;
+    border-radius:14px;
     padding:22px;
-    box-shadow:0 5px 18px rgba(0,0,0,.07);
+    box-shadow:0 5px 20px rgba(0,0,0,.07);
 }
 
 .orders h2{
@@ -288,7 +371,7 @@ body{
 .order{
     display:flex;
     justify-content:space-between;
-    padding:12px 5px;
+    padding:13px 5px;
     border-bottom:1px solid #edf0f4;
     font-size:14px;
 }
@@ -298,24 +381,32 @@ body{
 }
 
 .status{
-    color:#159447;
+    color:#16a34a;
     font-weight:bold;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
+
 .footer{
-    background:#182033;
+    background:linear-gradient(
+        90deg,
+        #0757d9,
+        #16a34a,
+        #f97316,
+        #e3262e
+    );
+
     color:white;
     text-align:center;
     padding:28px 15px;
-    margin-top:40px;
 }
 
-.footer span{
-    color:#ffd21f;
+.footer strong{
+    color:#ffe600;
 }
 
-/* MODAL */
+/* ================= MODAL ================= */
+
 .modal{
     display:none;
     position:fixed;
@@ -331,7 +422,7 @@ body{
     width:100%;
     max-width:430px;
     background:white;
-    border-radius:13px;
+    border-radius:14px;
     padding:24px;
     position:relative;
 }
@@ -339,14 +430,14 @@ body{
 .close{
     position:absolute;
     right:17px;
-    top:10px;
-    font-size:27px;
-    cursor:pointer;
+    top:9px;
+    font-size:28px;
     color:#777;
+    cursor:pointer;
 }
 
 .selected{
-    background:#eef4ff;
+    background:#eff6ff;
     border-left:4px solid #0757d9;
     padding:12px;
     margin:18px 0;
@@ -355,9 +446,9 @@ body{
 .modal input{
     width:100%;
     padding:13px;
-    border:1px solid #d6dce7;
-    border-radius:7px;
     margin-top:12px;
+    border:1px solid #d5dce7;
+    border-radius:8px;
 }
 
 .modal button{
@@ -365,23 +456,15 @@ body{
     padding:13px;
     margin-top:10px;
     border:0;
-    border-radius:7px;
+    border-radius:8px;
     background:#e3262e;
-    color:#fff;
+    color:white;
     font-weight:bold;
+    cursor:pointer;
 }
 
-.success{
-    display:none;
-    margin-top:12px;
-    padding:12px;
-    background:#e8fff0;
-    color:#087a37;
-    border-radius:7px;
-    text-align:center;
-}
+/* ================= MOBILE ================= */
 
-/* MOBILE */
 @media(max-width:600px){
 
     .header{
@@ -390,6 +473,15 @@ body{
 
     .logo{
         font-size:21px;
+    }
+
+    .telegram-top{
+        padding:8px 12px;
+        font-size:13px;
+    }
+
+    .notice{
+        margin:12px;
     }
 
     .hero{
@@ -421,37 +513,52 @@ body{
     .price{
         font-size:20px;
     }
+
+    .buy{
+        font-size:13px;
+        padding:11px 5px;
+    }
 }
 </style>
 </head>
 
+
 <body>
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
+
 <header class="header">
 
     <div class="logo">
         KSA <span>PANEL</span>
     </div>
 
-    <a href="https://t.me/ksapanel473"
-       target="_blank"
-       class="login-btn">
-       Telegram
+    <a
+        href="https://t.me/ksapanel473"
+        target="_blank"
+        class="telegram-top">
+
+        Telegram
+
     </a>
 
 </header>
 
 
-<!-- NOTICE -->
+<!-- ================= NOTICE ================= -->
+
 <div class="notice">
+
     <b>NOTICE:</b>
+
     Payment করার আগে সঠিক product এবং price দেখে নিন।
     Payment করার পর TRX ID অবশ্যই submit করুন।
+
 </div>
 
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
+
 <section class="hero">
 
     <h1>
@@ -468,24 +575,39 @@ body{
 <main class="container">
 
 
-<!-- CATEGORY -->
+<!-- ================= CATEGORY ================= -->
+
 <div class="categories">
 
-    <button class="active">ALL</button>
+    <button class="active">
+        ALL
+    </button>
 
-    <button>NON ROOT</button>
+    <button>
+        NON ROOT
+    </button>
 
-    <button>ROOT</button>
+    <button>
+        ROOT
+    </button>
 
-    <button>IPHONE</button>
+    <button>
+        IPHONE
+    </button>
 
-    <button>PC PANEL</button>
+    <button>
+        PC PANEL
+    </button>
 
 </div>
 
 
-<!-- PRODUCTS -->
+<!-- ================= PRODUCTS ================= -->
+
 <section class="products">
+
+
+    <!-- PRODUCT 1 -->
 
     <div class="product">
 
@@ -495,7 +617,9 @@ body{
 
         <div class="product-body">
 
-            <h3>Safe Panel</h3>
+            <h3>
+                Safe Panel
+            </h3>
 
             <span class="verified">
                 ✓ VERIFIED
@@ -522,6 +646,8 @@ body{
     </div>
 
 
+    <!-- PRODUCT 2 -->
+
     <div class="product">
 
         <div class="product-img">
@@ -530,7 +656,9 @@ body{
 
         <div class="product-body">
 
-            <h3>Premium Panel</h3>
+            <h3>
+                Premium Panel
+            </h3>
 
             <span class="verified">
                 ✓ VERIFIED
@@ -557,6 +685,8 @@ body{
     </div>
 
 
+    <!-- PRODUCT 3 -->
+
     <div class="product">
 
         <div class="product-img">
@@ -565,7 +695,9 @@ body{
 
         <div class="product-body">
 
-            <h3>VIP Panel</h3>
+            <h3>
+                VIP Panel
+            </h3>
 
             <span class="verified">
                 ✓ VERIFIED
@@ -594,7 +726,8 @@ body{
 </section>
 
 
-<!-- PAYMENT -->
+<!-- ================= PAYMENT ================= -->
+
 <section class="payment">
 
     <h2>
@@ -636,7 +769,7 @@ body{
     <a
         href="https://t.me/ksapanel473"
         target="_blank"
-        class="telegram">
+        class="telegram-support">
 
         📲 Telegram Support
         @ksapanel473
@@ -656,36 +789,77 @@ body{
 </section>
 
 
-<!-- LATEST ORDERS -->
+<!-- ================= LATEST ORDERS ================= -->
+
 <section class="orders">
 
     <h2>
         Latest 5 Orders
     </h2>
 
-    <div class="order">
-        <span>Customer ****23</span>
-        <span class="status">Completed</span>
-    </div>
 
     <div class="order">
-        <span>Customer ****71</span>
-        <span class="status">Completed</span>
+
+        <span>
+            Customer ****23
+        </span>
+
+        <span class="status">
+            Completed
+        </span>
+
     </div>
 
-    <div class="order">
-        <span>Customer ****48</span>
-        <span class="status">Completed</span>
-    </div>
 
     <div class="order">
-        <span>Customer ****92</span>
-        <span class="status">Completed</span>
+
+        <span>
+            Customer ****71
+        </span>
+
+        <span class="status">
+            Completed
+        </span>
+
     </div>
 
+
     <div class="order">
-        <span>Customer ****16</span>
-        <span class="status">Completed</span>
+
+        <span>
+            Customer ****48
+        </span>
+
+        <span class="status">
+            Completed
+        </span>
+
+    </div>
+
+
+    <div class="order">
+
+        <span>
+            Customer ****92
+        </span>
+
+        <span class="status">
+            Completed
+        </span>
+
+    </div>
+
+
+    <div class="order">
+
+        <span>
+            Customer ****16
+        </span>
+
+        <span class="status">
+            Completed
+        </span>
+
     </div>
 
 </section>
@@ -694,7 +868,8 @@ body{
 </main>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
+
 <footer class="footer">
 
     <p>
@@ -703,16 +878,23 @@ body{
     </p>
 
     <p>
-        <span>Blue • Red • Yellow</span>
+        <strong>
+            Red • Orange • Green • Blue
+        </strong>
     </p>
 
 </footer>
 
 
-<!-- ORDER MODAL -->
-<div id="orderModal" class="modal">
+<!-- ================= ORDER MODAL ================= -->
+
+<div
+    id="orderModal"
+    class="modal">
+
 
     <div class="modal-box">
+
 
         <span
             class="close"
@@ -724,7 +906,9 @@ body{
 
 
         <h2 style="color:#0757d9;">
+
             Complete Order
+
         </h2>
 
 
@@ -739,8 +923,12 @@ body{
             bKash Send Money:
         </p>
 
-        <h3 style="color:#e3262e;margin-top:5px;">
+
+        <h3
+            style="color:#e3262e;margin-top:5px;">
+
             01832137297
+
         </h3>
 
 
@@ -766,12 +954,15 @@ body{
 
         </div>
 
+
     </div>
 
 </div>
 
 
 <script>
+
+/* ================= BUY NOW ================= */
 
 function openOrder(product,price){
 
@@ -787,6 +978,8 @@ function openOrder(product,price){
 }
 
 
+/* ================= CLOSE MODAL ================= */
+
 function closeOrder(){
 
     document.getElementById(
@@ -796,12 +989,15 @@ function closeOrder(){
 }
 
 
+/* ================= PAYMENT ================= */
+
 function submitPayment(){
 
     let trx =
         document.getElementById(
             "trx"
         ).value.trim();
+
 
     if(!trx){
 
@@ -810,7 +1006,9 @@ function submitPayment(){
         );
 
         return;
+
     }
+
 
     document.getElementById(
         "success"
@@ -819,12 +1017,15 @@ function submitPayment(){
 }
 
 
+/* ================= MODAL PAYMENT ================= */
+
 function confirmOrder(){
 
     let trx =
         document.getElementById(
             "modalTrx"
         ).value.trim();
+
 
     if(!trx){
 
@@ -833,11 +1034,31 @@ function confirmOrder(){
         );
 
         return;
+
     }
+
 
     document.getElementById(
         "modalSuccess"
     ).style.display="block";
+
+}
+
+
+/* ================= CLOSE WHEN CLICK OUTSIDE ================= */
+
+window.onclick = function(event){
+
+    const modal =
+        document.getElementById(
+            "orderModal"
+        );
+
+    if(event.target === modal){
+
+        closeOrder();
+
+    }
 
 }
 
